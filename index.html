@@ -897,7 +897,7 @@ body.export video::-webkit-media-controls{display:none!important}
     setTimeout(function(){chap.classList.remove('go','bye');},340);
   }
   function show(i,fromHash,skipChap){
-    cur=Math.max(0,Math.min(n-1,i)); pauseAll();
+    if(lbOn){closeLb();} cur=Math.max(0,Math.min(n-1,i)); pauseAll();
     slides.forEach(function(s,k){s.classList.toggle('on',k===cur)});
     var sel='.eyebrow,.tag,.ftag,.ixr,.gc,.chp,.pcd,.legend,.oth-grid .tile,.advr,.b2k,.b2n,.b2p,.kicker,.s5sub,.pn5,.fl,.d6a,.d6h span,.l4 .agent-no,.l4p,.fmt-t,.fmt,.stage,.st5,.d6k,.d6 .agent-no,.d6r,.mega,h1,h2,.sub,.pill,.agent-no,.cover-sub,.lead2,.step3,.arr,.node2,.chips span,.cols3 .card,.bub,.steps li,.say,.viawa,.robot,.cph,.band,.big-card,.plus,.closing,.agentchip,.logo-top,.unread,.vid,.divider-text p';
     var nb=0;[].forEach.call(slides[cur].querySelectorAll(sel),function(el,i){el.classList.add('anim');el.style.setProperty('--i',Math.min(i,16));if(el.classList.contains('bub')){el.style.setProperty('--b',nb++);}});
